@@ -12,9 +12,9 @@ export const options = {
 };
 
 export default function () {
-  const name = "morpheus";
-  const job = "zion resident";
-  group("Create with valid request should succees", function () {
+  group("Create user with valid request should be success", function () {
+    const name = "morpheus";
+    const job = "leader";
     const FULL_URL = "https://reqres.in/api/users";
     const payload = JSON.stringify({
       name: name,
@@ -38,6 +38,8 @@ export default function () {
   sleep(1);
 
   group("Update with valid request should succees", function () {
+    const name = "morpheus";
+    const job = "zion resident";
     const FULL_URL = "https://reqres.in/api/users/2";
     const payload = JSON.stringify({
       name: name,
@@ -64,6 +66,7 @@ export default function () {
     });
   });
 }
+
 export function handleSummary(data) {
   return {
     "summary.html": htmlReport(data),
