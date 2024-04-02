@@ -27,7 +27,7 @@ export default function () {
 
   sleep(1);
 
-  group("Update with valid request should succees", function () {
+  group("Update with valid request should success", function () {
     const name = "morpheus";
     const job = "zion resident";
     const FULL_URL = "https://reqres.in/api/users/2";
@@ -49,9 +49,9 @@ export default function () {
       },
     });
     check(res, {
-      "response name should same with request name": (res) => {
+      "response job should same with request job": (res) => {
         const response = JSON.parse(res.body);
-        return response.name === name;
+        return response.job === job;
       },
     });
   });
